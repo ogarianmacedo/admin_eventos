@@ -1,0 +1,41 @@
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+
+<nav *ngIf="logado()" class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="dashboard">AspNET Core & Angular</a>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item">
+      <a class="nav-link" (click)="logout()" style="cursor: pointer">
+        {{userName()}} - 
+        <i class="fas fa-power-off"></i> 
+        Sair
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav *ngIf="logado()" class="col-md-2 d-none d-md-block bg-light sidebar" style="position: fixed !important">
+      <app-sidemenu></app-sidemenu>
+    </nav>
+
+    <main role="main" class="col-md-10 ml-sm-auto px-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

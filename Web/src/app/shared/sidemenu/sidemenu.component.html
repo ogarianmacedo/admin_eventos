@@ -1,0 +1,31 @@
+<div class="sidebar-sticky">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="dashboard" routerLinkActive="active">
+        <i class="fas fa-desktop"></i> 
+        Dashboard 
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="eventos" routerLinkActive="active">
+        <i class="fas fa-gamepad"></i> 
+        Eventos
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="palestrantes" routerLinkActive="active">
+        <i class="fas fa-users"></i> 
+        Palestrantes
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" (click)="logout()" style="cursor: pointer">
+        <i class="fas fa-power-off"></i>
+        Sair
+      </a>
+    </li>
+  </ul>
+</div>

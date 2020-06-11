@@ -1,0 +1,38 @@
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.csprojAssemblyReference.cache
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cache
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cs
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfoInputs.cache
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfo.cs
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\appsettings.json
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\package-lock.json
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.deps.json
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.runtimeconfig.json
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.runtimeconfig.dev.json
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.dll
+C:\xampp\htdocs\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.pdb
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.RazorTargetAssemblyInfo.cache
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.dll
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.pdb
+C:\xampp\htdocs\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.genruntimeconfig.cache
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\appsettings.json
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\package-lock.json
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.deps.json
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.runtimeconfig.json
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.runtimeconfig.dev.json
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.dll
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\bin\Debug\netcoreapp2.2\Api.pdb
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.csprojAssemblyReference.cache
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.csproj.CoreCompileInputs.cache
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cache
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cs
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfoInputs.cache
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfo.cs
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.RazorTargetAssemblyInfo.cache
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.dll
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.pdb
+D:\OGARIAN\CONTEUDO DESENVOLVIMENTO\PROJETOS EM ANDAMENTO\ProjetoCoreAngular\Api\obj\Debug\netcoreapp2.2\Api.genruntimeconfig.cache
