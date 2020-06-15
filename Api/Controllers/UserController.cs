@@ -36,12 +36,6 @@ namespace Api.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("GetUser")]
-        public IActionResult GetUser()
-        {
-            return Ok(new UserDTO());
-        }
-
         [HttpPost("Register")]
         [AllowAnonymous]
         public async Task<IActionResult> Register(UserDTO userDto)
@@ -54,7 +48,7 @@ namespace Api.Controllers
 
                 if (result.Succeeded)
                 {
-                    return Created("GeUser", userToReturn);
+                    return Ok(new { user = userToReturn });
                 }
 
                 return BadRequest(result.Errors);

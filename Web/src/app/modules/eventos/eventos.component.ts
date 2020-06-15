@@ -84,7 +84,6 @@ export class EventosComponent implements OnInit {
         this.eventosFiltrados = resp;
       }, error => {
         this.toastr.error('Erro ao carregar eventos!');
-        console.log(error);
       }
     );
   }
@@ -187,7 +186,6 @@ export class EventosComponent implements OnInit {
             this.toastr.success('Evento cadastrado com sucesso!');
           }, error => {
             this.toastr.error('Erro ao cadastrar evento!');
-            console.log(error);
           }
         );
       } else {
@@ -202,7 +200,6 @@ export class EventosComponent implements OnInit {
             this.toastr.success('Evento editado com sucesso!');
           }, error => {
             this.toastr.error('Erro ao editar evento!');
-            console.log(error);
           }
         );
       }
@@ -229,7 +226,6 @@ export class EventosComponent implements OnInit {
         this.toastr.success('Evento excluído com sucesso!');
       }, error => {
         this.toastr.error('Erro ao excluir evento!');
-        console.log(error);
       }
     );
   }

@@ -7,7 +7,7 @@ namespace Api.Interfaces
         void Add(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
-        Task<bool> SaveChangesAsync();
         void DeleteRanger<T>(T[] entity) where T : class;
+        Task<bool> SaveChangesAsync();
     }
 }

@@ -5,8 +5,8 @@ namespace Api.Interfaces
 {
     public interface IEvento : IRepositorioGenerico<Evento>
     {
-        Task<Evento[]> GetEventoAsyncByTema(string tema, bool includePalestrantes);
-        Task<Evento[]> GetAllEventoAsync(bool includePalestrantes);
-        Task<Evento> GetEventoAsyncById(int id, bool includePalestrantes);
+        Task<Evento[]> GetAllEventoAsync(bool includePalestrantes = false);
+        Task<Evento[]> GetEventoAsyncByTema(string tema, bool includePalestrantes = false);
+        Task<Evento> GetEventoAsyncById(int id, bool includePalestrantes = false);
     }
 }

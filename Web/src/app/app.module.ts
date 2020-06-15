@@ -18,7 +18,6 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { EventosComponent } from './modules/eventos/eventos.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PalestrantesComponent } from './modules/palestrantes/palestrantes.component';
 import { SidemenuComponent } from './shared/sidemenu/sidemenu.component';
 import { TitleComponent } from './shared/title/title.component';
@@ -32,7 +31,6 @@ import { EventoEditComponent } from './modules/eventos/evento-edit/evento-edit.c
       DateTimeFormatPipe,
       AppComponent,
       EventosComponent,
-      DashboardComponent,
       PalestrantesComponent,
       SidemenuComponent,
       TitleComponent,

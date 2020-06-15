@@ -23,14 +23,14 @@ export class EventoService {
    * Busca evento por tema
    */
   getEventoByTema(tema: string): Observable<Evento[]> {
-    return this.http.get<Evento[]>(`${this.baseUrl}/getByTema${tema}`);
+    return this.http.get<Evento[]>(`${this.baseUrl}/getEventoByTema${tema}`);
   }
 
   /**
    * Busca evento por id
    */
   getEventoById(id: number): Observable<Evento> {
-    return this.http.get<Evento>(`${this.baseUrl}/${id}`);
+    return this.http.get<Evento>(`${this.baseUrl}/getEventoById/${id}`);
   }
 
   /**
@@ -41,14 +41,14 @@ export class EventoService {
   }
 
   /**
-   * Edita evendo selecionado
+   * Edita evento selecionado
    */
   editEvento(evento: Evento) {
     return this.http.put(`${this.baseUrl}/${evento.id}`, evento);
   }
 
   /**
-   * Exclui vendo selecionado
+   * Exclui evento selecionado
    */
   deleteEvento(id: number) {
     return this.http.delete(`${this.baseUrl}/${id}`);

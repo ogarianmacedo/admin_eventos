@@ -5,7 +5,8 @@ namespace Api.Interfaces
 {
     public interface IPalestrante : IRepositorioGenerico<Palestrante>
     {
-        Task<Palestrante[]> GetPalestranteAsyncByName(string nome, bool includeEventos);
-        Task<Palestrante> GetPalestranteAsyncById(int id, bool includeEventos);
+        Task<Palestrante[]> GetAllPalestrantesAsync(bool includeEventos = false);
+        Task<Palestrante> GetPalestranteAsyncById(int id, bool includeEventos = false);
+        Task<Palestrante[]> GetPalestranteAsyncByNome(string nome, bool includeEventos = false);
     }
 }

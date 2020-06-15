@@ -16,18 +16,17 @@ namespace Api.Repositories
             _contexto.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
-        public async Task<Palestrante[]> GetPalestranteAsyncByName(string nome, bool includeEventos = false)
+        public async Task<Palestrante[]> GetAllPalestrantesAsync(bool includeEventos = false)
         {
-             IQueryable<Palestrante> query = _contexto.Palestrantes.Include(c => c.Redes);
-
-            if(includeEventos)
+            IQueryable<Palestrante> query = _contexto.Palestrantes.Include(pa => pa.Redes);
+            
+            if (includeEventos)
             {
-                query = query.Include(pe => pe.PalestranteEventos)
+                query = query.Include(pe => pe.PalestrantesEventos)
                              .ThenInclude(e => e.Evento);
             }
 
-            query = query.AsNoTracking().Where(p => p.Nome.ToLower().Contains(nome.ToLower()));
-
+            query = query.AsNoTracking().OrderBy(p => p.Nome);
             return await query.ToArrayAsync();
         }
 
@@ -35,9 +34,9 @@ namespace Api.Repositories
         {
             IQueryable<Palestrante> query = _contexto.Palestrantes.Include(c => c.Redes);
 
-            if(includeEventos)
+            if (includeEventos)
             {
-                query = query.Include(pe => pe.PalestranteEventos)
+                query = query.Include(pe => pe.PalestrantesEventos)
                              .ThenInclude(e => e.Evento);
             }
 
@@ -45,5 +44,21 @@ namespace Api.Repositories
 
             return await query.FirstOrDefaultAsync();
         }
+
+        public async Task<Palestrante[]> GetPalestranteAsyncByNome(string nome, bool includeEventos = false)
+        {
+             IQueryable<Palestrante> query = _contexto.Palestrantes.Include(c => c.Redes);
+
+            if (includeEventos)
+            {
+                query = query.Include(pe => pe.PalestrantesEventos)
+                             .ThenInclude(e => e.Evento);
+            }
+
+            query = query.AsNoTracking().Where(p => p.Nome.ToLower().Contains(nome.ToLower()));
+
+            return await query.ToArrayAsync();
+        }
+        
     }
 }

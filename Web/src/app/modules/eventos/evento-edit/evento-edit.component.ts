@@ -158,7 +158,6 @@ export class EventoEditComponent implements OnInit {
         this.toastr.success('Evento editado com sucesso!');
       }, error => {
         this.toastr.error('Erro ao editar evento!');
-        console.log(error);
       }
     );
   }

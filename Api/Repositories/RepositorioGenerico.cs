@@ -31,15 +31,14 @@ namespace Api.Repositories
            _contexto.Remove(entity);
         }
 
-        public async Task<bool> SaveChangesAsync()
-        {
-            return (await _contexto.SaveChangesAsync()) > 0;
-        }
-
         public void DeleteRanger<T>(T[] entityArray) where T : class
         {
             _contexto.RemoveRange(entityArray);
         }
 
+        public async Task<bool> SaveChangesAsync()
+        {
+            return (await _contexto.SaveChangesAsync()) > 0;
+        }
     }
 }

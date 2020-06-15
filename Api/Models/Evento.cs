@@ -10,12 +10,11 @@ namespace Api.Models
         public DateTime? DataEvento { get; set; }
         public string Tema { get; set; }
         public int QtdPessoas { get; set; }
-        public string ImagemUrl { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
-        public string Lote { get; set; }
+        public string ImagemUrl { get; set; }
         public List<Lote> Lotes { get; set; }
         public List<Rede> Redes { get; set; }
-        public List<PalestranteEvento> PalestranteEventos { get; set; }
+        public List<PalestranteEvento> PalestrantesEventos { get; set; }
     }
 }

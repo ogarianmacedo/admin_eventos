@@ -21,30 +21,13 @@ namespace Api.Repositories
             IQueryable<Evento> query = _contexto.Eventos.Include(c => c.Lotes)
                                                         .Include(c => c.Redes);
 
-            if(includePalestrantes)
+            if (includePalestrantes)
             {
-                query = query.Include(pe => pe.PalestranteEventos)
+                query = query.Include(pe => pe.PalestrantesEventos)
                              .ThenInclude(p => p.Palestrante);
             }
 
             query = query.AsNoTracking().OrderBy(c => c.Id);
-
-            return await query.ToArrayAsync();
-        }
-
-        public async Task<Evento[]> GetEventoAsyncByTema(string tema, bool includePalestrantes)
-        {
-            IQueryable<Evento> query = _contexto.Eventos.Include(c => c.Lotes)
-                                                        .Include(c => c.Redes);
-
-            if(includePalestrantes)
-            {
-                query = query.Include(pe => pe.PalestranteEventos)
-                             .ThenInclude(p => p.Palestrante);
-            }
-
-            query = query.AsNoTracking().OrderBy(c => c.Id)
-                         .Where(c => c.Tema.ToLower().Contains(tema.ToLower()));
 
             return await query.ToArrayAsync();
         }
@@ -54,9 +37,9 @@ namespace Api.Repositories
             IQueryable<Evento> query = _contexto.Eventos.Include(c => c.Lotes)
                                                         .Include(c => c.Redes);
 
-            if(includePalestrantes)
+            if (includePalestrantes)
             {
-                query = query.Include(pe => pe.PalestranteEventos)
+                query = query.Include(pe => pe.PalestrantesEventos)
                              .ThenInclude(p => p.Palestrante);
             }
 
@@ -66,5 +49,23 @@ namespace Api.Repositories
 
             return await query.FirstOrDefaultAsync();
         }
+
+        public async Task<Evento[]> GetEventoAsyncByTema(string tema, bool includePalestrantes = false)
+        {
+            IQueryable<Evento> query = _contexto.Eventos.Include(c => c.Lotes)
+                                                        .Include(c => c.Redes);
+
+            if (includePalestrantes)
+            {
+                query = query.Include(pe => pe.PalestrantesEventos)
+                             .ThenInclude(p => p.Palestrante);
+            }
+
+            query = query.AsNoTracking().OrderBy(c => c.Id)
+                         .Where(c => c.Tema.ToLower().Contains(tema.ToLower()));
+
+            return await query.ToArrayAsync();
+        }
+      
     }
 }

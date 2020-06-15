@@ -15,7 +15,7 @@ namespace Api.Models
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Palestrante> Palestrantes { get; set; }
         public DbSet<Lote> Lotes { get; set; }
-        public DbSet<PalestranteEvento> PalestranteEventos { get; set; }
+        public DbSet<PalestranteEvento> PalestrantesEventos { get; set; }
         public DbSet<Rede> Redes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

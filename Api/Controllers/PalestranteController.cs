@@ -13,24 +13,24 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EventoController : ControllerBase
+    public class PalestranteController : ControllerBase
     {
-        private readonly IEvento _eventoRepository;
+        private readonly IPalestrante _palestranteRepository;
         private readonly IMapper _mapper;
 
-        public EventoController(IEvento repositorio, IMapper mapper)
+        public PalestranteController(IPalestrante palestranteRepository, IMapper mapper)
         {
-            _eventoRepository = repositorio;
+            _palestranteRepository = palestranteRepository;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get()
+        public async Task<ActionResult> Get() 
         {
             try
             {
-                var eventos = await _eventoRepository.GetAllEventoAsync(true);
-                var results = _mapper.Map<EventoDTO[]>(eventos);
+                var palestrantes = await _palestranteRepository.GetAllPalestrantesAsync(true);
+                var results = _mapper.Map<PalestranteDTO[]>(palestrantes);
                 return Ok(results);
             }
             catch (System.Exception ex)
@@ -39,47 +39,47 @@ namespace Api.Controllers
             }
         }
 
-        [HttpGet("getEventoById/{id}")]
-        public async Task<ActionResult> GetEventoById(int id)
+        [HttpGet("getPalestranteById/{id}")]
+        public async Task<ActionResult> GetPalestranteById(int id)
         {
             try
             {
-                var evento = await _eventoRepository.GetEventoAsyncById(id, true);
-                var results = _mapper.Map<EventoDTO>(evento);
-                return Ok(results);
+                var palestrante = await _palestranteRepository.GetPalestranteAsyncById(id);
+                var result = _mapper.Map<PalestranteDTO>(palestrante);
+                return Ok(result);
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(500, "Deu ruim!");
+                return this.StatusCode(500, $"Deu ruim! {ex.Message}");
             }
         }
 
-        [HttpGet("getEventoByTema/{tema}")]
-        public async Task<ActionResult> GetEventoByTema(string tema)
+        [HttpGet("getPalestranteByNome/{nome}")]
+        public async Task<ActionResult> GetPalestranteByNome(string nome)
         {
             try
             {
-                var eventos = await _eventoRepository.GetEventoAsyncByTema(tema, true);
-                var results = _mapper.Map<EventoDTO[]>(eventos);
-                return Ok(results);
+                var palestrantes = await _palestranteRepository.GetPalestranteAsyncByNome(nome);
+                var result = _mapper.Map<PalestranteDTO[]>(palestrantes);
+                return Ok(result);
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(500, "Deu ruim!");
+                return this.StatusCode(500, $"Deu ruim! {ex.Message}");
             }
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(EventoDTO eventoDTO)
+        public async Task<ActionResult> Post(PalestranteDTO palestranteDTO)
         {
             try
             {
-                var evento = _mapper.Map<Evento>(eventoDTO);
-                _eventoRepository.Add(evento);
+                var palestrante = _mapper.Map<Palestrante>(palestranteDTO);
+                _palestranteRepository.Add(palestrante);
 
-                if (await _eventoRepository.SaveChangesAsync())
+                if (await _palestranteRepository.SaveChangesAsync())
                 {
-                    return Ok(_mapper.Map<EventoDTO>(evento));
+                    return Ok(_mapper.Map<PalestranteDTO>(palestrante));
                 }
             }
             catch (System.Exception ex)
@@ -91,45 +91,37 @@ namespace Api.Controllers
         }
 
         [HttpPut("{Id}")]
-        public async Task<ActionResult> Put(int id, EventoDTO eventoDTO)
+        public async Task<ActionResult> Put(int id, PalestranteDTO palestranteDTO)
         {
             try
             {
-                var evento = await _eventoRepository.GetEventoAsyncById(id, false);
-                if (evento == null)
+                var palestrante = await _palestranteRepository.GetPalestranteAsyncById(id, false);
+                if (palestrante == null)
                 {
                     return NotFound();
                 }
 
-                var idLotes = new List<int>();
                 var idRedes = new List<int>();
+                palestranteDTO.Redes.ForEach(item => idRedes.Add(item.Id));
 
-                eventoDTO.Lotes.ForEach(item => idLotes.Add(item.Id));
-                eventoDTO.Redes.ForEach(item => idRedes.Add(item.Id));
-
-                var lotes = evento.Lotes.Where(lote => !idLotes.Contains(lote.Id)).ToArray();
-                var redes = evento.Redes.Where(rede => !idRedes.Contains(rede.Id)).ToArray();
-
-                if (lotes.Length > 0) {
-                    _eventoRepository.DeleteRanger(lotes);
-                }
+                var redes = palestrante.Redes.Where(rede => !idRedes.Contains(rede.Id)).ToArray();
 
                 if (redes.Length > 0) {
-                    _eventoRepository.DeleteRanger(redes);
+                    _palestranteRepository.DeleteRanger(redes);
                 }
 
-                eventoDTO.Id = id;
-                _mapper.Map(eventoDTO, evento);
-                _eventoRepository.Update(evento);
+                palestranteDTO.Id = id;
+                _mapper.Map(palestranteDTO, palestrante);
+                _palestranteRepository.Update(palestrante);
 
-                if (await _eventoRepository.SaveChangesAsync())
+                if (await _palestranteRepository.SaveChangesAsync())
                 {
-                    return Ok(_mapper.Map<EventoDTO>(evento));
+                    return Ok(_mapper.Map<PalestranteDTO>(palestrante));
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(500, "Deu ruim!");
+                return this.StatusCode(500, $"Deu ruim! {ex.Message}");
             }
 
             return BadRequest();
@@ -140,14 +132,14 @@ namespace Api.Controllers
         {
             try
             {
-                var evento = await _eventoRepository.GetEventoAsyncById(Id, false);
-                if (evento == null)
+                var palestrante = await _palestranteRepository.GetPalestranteAsyncById(Id, false);
+                if (palestrante == null)
                 {
                     return NotFound();
                 }
 
-                _eventoRepository.Delete(evento);
-                if (await _eventoRepository.SaveChangesAsync())
+                _palestranteRepository.Delete(palestrante);
+                if (await _palestranteRepository.SaveChangesAsync())
                 {
                     return Ok(new { success = "Excluído com sucesso!" });
                 }
@@ -187,5 +179,6 @@ namespace Api.Controllers
                 return this.StatusCode(500, $"Deu ruim! {ex.Message}");
             }
         }
+
     }
 }
