@@ -1,6 +1,6 @@
-# admin-eventos
+# admin_eventos
 
-Projeto de estudo - Asp.NET Core 2.2 com Angular 9
+Projeto de estudo - Api com Asp.NET Core 2.2 e Front-end com Angular 9
 
 #### Web
     1- Executar: npm install
