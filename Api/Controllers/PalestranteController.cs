@@ -179,6 +179,5 @@ namespace Api.Controllers
                 return this.StatusCode(500, $"Deu ruim! {ex.Message}");
             }
         }
-
     }
 }

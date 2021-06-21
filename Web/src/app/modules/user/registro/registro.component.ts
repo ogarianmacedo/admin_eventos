@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-
   registerForm: FormGroup;
   user: User;
 
@@ -78,5 +77,4 @@ export class RegistroComponent implements OnInit {
       )
     }
   }
-
 }

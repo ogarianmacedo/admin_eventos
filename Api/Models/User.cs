@@ -8,6 +8,7 @@ namespace Api.Models
     {
         [Column(TypeName="nvarchar(150)")]
         public string FullName { get; set; }
+       
         public List<UserRole> UserRoles { get; set; }
     }
 }

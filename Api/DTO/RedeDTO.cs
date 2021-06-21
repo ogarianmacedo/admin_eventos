@@ -16,6 +16,5 @@ namespace Api.DTO
         public List<EventoDTO> Eventos { get; set; }
         
         public List<PalestranteDTO> Palestrantes { get; set; }
-        
     }
 }

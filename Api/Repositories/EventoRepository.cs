@@ -66,6 +66,5 @@ namespace Api.Repositories
 
             return await query.ToArrayAsync();
         }
-      
     }
 }

@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Evento } from '../models/Evento';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventoService {
-
-  baseUrl = 'http://localhost:5000/api/evento';
+  baseUrl = environment.api_url + 'evento';
 
   constructor(private http: HttpClient) { }
 
@@ -64,5 +64,4 @@ export class EventoService {
 
     return this.http.post(`${this.baseUrl}/upload`, formData);
   }
-
 }

@@ -9,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   model: any = {};
 
   constructor(
@@ -20,18 +19,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('token') !== null) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/eventos']);
     }
   }
 
   login() {
     this.authService.login(this.model).subscribe(
       () => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/eventos']);
       }, error => {
         this.toastr.error('Erro ao efetuar login!');
       }
     );
   }
-
 }

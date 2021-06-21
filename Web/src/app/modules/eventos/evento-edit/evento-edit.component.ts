@@ -15,7 +15,6 @@ defineLocale('pt-br', ptBrLocale);
   styleUrls: ['./evento-edit.component.css']
 })
 export class EventoEditComponent implements OnInit {
-
   titulo = "Edição de Evento";
   registerForm: FormGroup;
   evento: Evento = new Evento();
@@ -161,5 +160,4 @@ export class EventoEditComponent implements OnInit {
       }
     );
   }
-
 }

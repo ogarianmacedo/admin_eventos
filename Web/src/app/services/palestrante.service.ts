@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Palestrante } from '../models/Palestrante';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PalestranteService {
-
-  baseUrl = 'http://localhost:5000/api/palestrante';
+  baseUrl = environment.api_url + 'palestrante';
 
   constructor(private http: HttpClient) { }
 
@@ -64,5 +64,4 @@ export class PalestranteService {
 
     return this.http.post(`${this.baseUrl}/upload`, formData);
   }
-
 }

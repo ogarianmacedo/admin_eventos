@@ -15,7 +15,6 @@ defineLocale('pt-br', ptBrLocale);
   styleUrls: ['./eventos.component.css']
 })
 export class EventosComponent implements OnInit {
-
   titulo = "Eventos";
 
   evento: Evento;
@@ -229,5 +228,4 @@ export class EventosComponent implements OnInit {
       }
     );
   }
-
 }

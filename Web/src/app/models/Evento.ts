@@ -3,7 +3,6 @@ import { Palestrante } from "./Palestrante";
 import { Rede } from "./Rede";
 
 export class Evento {
-
     constructor() {
     }
 

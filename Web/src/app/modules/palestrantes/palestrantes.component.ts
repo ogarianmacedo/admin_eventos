@@ -10,7 +10,6 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
   styleUrls: ['./palestrantes.component.css']
 })
 export class PalestrantesComponent implements OnInit {
-
   titulo = "Palestrantes";
   palestrante: Palestrante;
   palestrantes: Palestrante[];
@@ -236,5 +235,4 @@ export class PalestrantesComponent implements OnInit {
   removerRede(id: number) {
     this.redes.removeAt(id);
   }
-
 }

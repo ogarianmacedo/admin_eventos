@@ -9,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./sidemenu.component.css']
 })
 export class SidemenuComponent implements OnInit {
-
   constructor(
     private authService: AuthService,
     public router: Router,
@@ -23,5 +22,4 @@ export class SidemenuComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }
-
 }
